@@ -1,0 +1,93 @@
+.person-container{
+    display: flex;
+    margin: 20px;
+    width: 80%;
+    place-items: center;
+    padding: 30px;
+}
+
+.img-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 260px;
+    gap: 20px;
+    place-items: start;
+    margin-left: 80px;
+}
+
+.info-person-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 80px;
+    width: 50%;
+    text-align: start;
+}
+
+.info-person-container h2{
+    font-size: 20px;
+    text-align: start;
+    font-weight: bolder;
+    filter: drop-shadow(0 0 1px #fff);
+    letter-spacing: 1px;
+}
+
+.info-person-container h3{
+    font-size: 14px;
+    text-align: start;
+}
+
+.info-person-container small{
+    font-size: 12px;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.known-for{
+    display: flex;
+    gap: 20px;
+    max-width: 140px;
+    height: 300px;
+}
+
+.known-for-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.known-for-item img{
+    margin-top: 6px;
+    min-width: 125px;
+    max-width: 130px;
+}
+
+.known-for-item h4{
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .person-container{
+        flex-direction: column;
+        place-items: start;
+        gap: 40px;
+        margin: 0;
+        padding: 0 0 0 10px;
+    }
+    .info-person-container{
+        margin: 0;
+    }
+    .known-for{
+        margin: 30px 0;
+        gap: 10px;
+        height: 200px;
+        place-items: start;
+        padding-right: 80px;
+    }
+    .known-for-item img{
+        width: 10px;
+    }
+}
