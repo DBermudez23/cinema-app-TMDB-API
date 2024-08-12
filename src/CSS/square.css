@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: linear-gradient(#888, #777, #666, #333, #242424, #242424, #242424, #242424 );
 }
 
 
