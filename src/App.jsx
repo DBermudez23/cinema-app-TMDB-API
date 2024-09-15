@@ -4,6 +4,7 @@ import "./CSS/App.css";
 import { API_KEY, API_URL } from "./components/url";
 import axios from "axios";
 import Square from "./components/square.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   //We generate the useState () for search functions
@@ -98,6 +99,7 @@ function App() {
           setSelectedPerson={setSelectedPerson}
         />
       </div>
+      <Footer />
     </main>
   );
 }

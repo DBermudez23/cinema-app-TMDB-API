@@ -4,14 +4,15 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: linear-gradient(#888, #777, #666, #333, #242424, #242424, #242424, #242424,#333, #444 );
+    padding-bottom: 60px;
 }
 
 
 .movies-cont{
     display: flex;
-    padding: 0 20px;
     align-items: center;
-    gap: 5px;
+    padding-left: 10px;
 }
 
 .movies-list{
@@ -22,6 +23,7 @@
 .button-cont{
     background-color: transparent;
 }
+
 
 .button-icon{
     color: #fff;
@@ -46,6 +48,7 @@
     padding: 5px;
     border-radius: 8px;
 }
+
 
 .main-info-tv{
     margin-top: 40px;

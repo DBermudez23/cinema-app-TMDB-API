@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer{
+    height: 400px;
+    background-color: #242424;
+    width: 100%;
+    border-top: 2px solid #fff;
+    box-shadow: 0 0 20px #000;
+}
+
+.top-container{
+    padding: 40px 0 ;
+    box-sizing: border-box;
+}
+
+.links-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    gap: 100px;
+}
+
+h2{
+    font-size: 26px;
+    margin-bottom: 16px;
+    font-weight: bolder;
+}
+
+.list{
+    list-style: none;
+}
+
+.list-item{
+    text-align: start;
+    margin-bottom: 16px;
+}
+
+.list-item:hover{
+    text-decoration: underline;
+}
+
+/*-------BOTTOM PART----------*/
+
+hr{
+    width: 100%;
+    border: 1px solid #777;
+    margin-bottom: 30px;
+}
+
+.bottom-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.info{
+    margin-bottom: 40px;
+}
+
+.icons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.icon-link{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-link span{
+    font-size: 16px;
+    color: #777;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    color: #bbb;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .links-container {
+        flex-direction: column;
+        gap: 20px;
+        place-items: start;
+        padding: 30px;
+    }
+
+    .list-item a{
+        color: #bbb;
+    }
+
+    .info a{
+        color: #bbb;
+    }
+
+    .icons-container {
+        gap: 30px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .footer {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .top-container {
+        padding: 20px 0;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .icons-container {
+        gap: 20px;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .list-item {
+        margin-bottom: 10px;
+    }
+
+    .info {
+        margin-bottom: 20px;
+    }
+}

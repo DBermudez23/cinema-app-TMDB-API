@@ -1,3 +1,4 @@
+//This is the component of the movies in the square 
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
@@ -7,8 +8,11 @@ import MediaList from "./MediaList.jsx";
 import "../CSS/square.css";
 
 function MoviesComp({ selectedMovie, setSelectedMovie }) {
+  //state que almacenara el array de respuestas de data.results
   const [allResults, setAllResults] = useState([]);
+  //state que funcionara para cambiar las páginas
   const [currentPage, setCurrentPage] = useState(1);
+  //Variable que nos permitira operar según el número de peliculas que queramos mostrar por pagina en la sección MovieList
   const moviesPerPage = 8;
 
   useEffect(() => {
@@ -38,11 +42,14 @@ function MoviesComp({ selectedMovie, setSelectedMovie }) {
             })
           );
         }
-
+        //Ejecuta todas la promise en una sola para mejorar performance, las almacena en const para luego hacer un map de todas las respuestas del axios
         const responses = await Promise.all(requests);
+        //se genera un nuevo array de arrays con la función .map() donde se guardaran las información de la respuesta de data especificamente data.results
         const allPageResults = responses
           .map((response) => response.data.results)
+          //.flat() es una función que aplana los array, es decir que al array resultante del map, que era un array de otros array y los almacena todos en un solo array
           .flat();
+        //Guarda en la vaiable allMovies un array que contiene otros dos array, que son copias (operador spread) de los array results que contiene la página 1 de la respuesta del axios y allPageResults que contiene todas las páginas de la 2 hasta la 15 para luego modificar el state y almacenar toda la información en el
         const allMovies = [...results, ...allPageResults];
         setAllResults(allMovies);
 
@@ -59,10 +66,13 @@ function MoviesComp({ selectedMovie, setSelectedMovie }) {
   }, []);
 
   //generating the pagination
+  //Esta variable almacenara el indice de la última pelicula que se mostrara por pagina
   const indexOfLastMovie = currentPage * moviesPerPage;
+  //>Esta variable almacenara el indice de la primer pélicula que se muestre en alguna pagina
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
+  //Generara un subconjunto de elementos del array allresults donde mostrara desde el indice del primer elemento de la página, hasta, pero sin incluir el indice del último
   const currentMovies = allResults.slice(indexOfFirstMovie, indexOfLastMovie);
-
+  //La función Math.ceil redondea un número, en este caso redondeara el de la división de el total de elementos del array allResults por las peliculas que se mostraran por cada página y eso lo almacenara en la variable totalPageMovies
   const totalPagesMovies = Math.ceil(allResults.length / moviesPerPage);
 
   return (
@@ -74,6 +84,7 @@ function MoviesComp({ selectedMovie, setSelectedMovie }) {
             title={selectedMovie.original_title}
             overview={selectedMovie.overview}
             posterPath={selectedMovie.poster_path}
+            //Este id es esencial para uso de la API de youtube para mostrar el trailer para eso le pasamos la prop al mainMovie
             movieId={selectedMovie.id}
           />
         ) : (

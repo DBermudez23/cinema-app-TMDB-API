@@ -10,12 +10,15 @@
     border: 1px solid #fff;
     min-height: 270px;
     cursor: pointer;
-    transition: background 8s ease;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
 }
 
 .movie-card:hover{
     background: linear-gradient(#888, #464646, #464646, #888);
+    transform: scale(1.05);
 }
+
 
 .title{
     font-size: .9em;

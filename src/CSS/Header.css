@@ -25,6 +25,15 @@ h1{
     pointer-events: none;
 }
 
+.app-name{
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+}
+
+.app-name:hover{
+    transform: scale(1.1);
+}
+
 .form{
     width: 50%;
     height: 30px;
@@ -97,6 +106,12 @@ button{
 
 .navegate-li{
     width: 100%;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+}
+
+.navegate-li:hover{
+    transform: scale(1.1);
 }
 
 
@@ -118,9 +133,6 @@ a{
     }    
     .dropdown{
         display: flex;
-    }
-    a{
-        color: #000;
     }
     input{
         margin-left: 20px;

@@ -1,30 +1,34 @@
+//icon menu for the responsive
 import { AiOutlineSearch } from "react-icons/ai";
+//Menu responsive
 import DropdownMenu from "./Menu";
 import "../CSS/Header.css";
+//CustomNavLink to navegate (movies, tv series, person)
 import { CustomNavLink } from "../Routes/customNavLink";
+//Def of propTypes
 import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header({ setSearchKey, searchMovies, searchTv, searchPerson }) {
   const location = useLocation(); // Get the actual path
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //we generate a conditional to pass the functions to each component
+    //we generate a conditional to pass the search functions to each component
     if (location.pathname === "/tv") {
       searchTv(e);
     } else if (location.pathname === "/person") {
       searchPerson(e);
     } else {
-      searchMovies;
+      searchMovies(e);
     }
   };
   //Generate the header component
   return (
     <header className="header">
-      <div className="app-name">
+      <Link to="/" className="app-name">
         <h1>Movies DB</h1>
-      </div>
+      </Link>
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
